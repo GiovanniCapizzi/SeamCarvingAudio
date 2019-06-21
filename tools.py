@@ -19,7 +19,7 @@ def stft_plot(mX:np.ndarray, N : int = 4096 , H: int = 1024, fs :int=44100, show
     :param title: title string for the plot, None for default
     :return: None
     """
-    maxplotfreq = 8500.0                                    # frequency range to plot, in Hz
+    maxplotfreq = 8500.0 # 1400.0                                 # frequency range to plot, in Hz
 
     if dB:
         mX = 20*np.log10(mX)                             
@@ -30,8 +30,8 @@ def stft_plot(mX:np.ndarray, N : int = 4096 , H: int = 1024, fs :int=44100, show
     if mask:
         # https://matplotlib.org/examples/pylab_examples/custom_cmap.html
         # create a colormap, cmap_name, colors, N=n_bin                                                                                 
-        highlight = LinearSegmentedColormap.from_list('highlight', ['r', 'r'], N=1)          
-        plt.pcolormesh(frmTime, binFreq, np.transpose(mX[:,:int(N*maxplotfreq/fs+1)]), cmap=highlight)  
+        # highlight = LinearSegmentedColormap.from_list('highlight', ['r', 'r'], N=1)       
+        plt.pcolormesh(frmTime, binFreq, np.transpose(mX[:,:int(N*maxplotfreq/fs+1)]), cmap='autumn')  
     else:
         plt.pcolormesh(frmTime, binFreq, np.transpose(mX[:,:int(N*maxplotfreq/fs+1)]))
     plt.xlabel('time (sec)')
