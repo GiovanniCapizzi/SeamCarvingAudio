@@ -6,6 +6,13 @@ The structure is the following:
 
 ```bash
 ├── e2e.py
+├── example
+│   ├── bell.wav
+│   ├── bell_follow.png
+│   ├── bell_resynth.png
+│   ├── bell_resynth.wav
+│   ├── modified_bell.png
+│   └── modified_bell.wav
 ├── fixed_frequencies.py
 ├── sounds
 │   ├── 2chirps-1noise.py
@@ -18,6 +25,14 @@ The structure is the following:
 ├── tools.py
 └── variable_frequencies.py
 ```
+
+
+
+## Requirements
+
+These files are using [SMS-tools](https://github.com/MTG/sms-tools) as the main analysis framework. Before starting any of these files you have to install this package and put this files in the workspace folder, or fix their relative paths.
+
+
 
 ## e2e.py
 
@@ -37,5 +52,8 @@ A collection of several utility functions, used to plot and analyze sounds.
 
 ## sounds
 
-A folder which collects the main sounds used in this work.
+A folder which collects the main sounds used in this work, and the code used to generates them.
 
+## example
+
+This folders contains the extraction and resynthesis of a bell sound, used as a manipulation example of the extracted parameters.
